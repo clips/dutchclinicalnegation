@@ -35,8 +35,8 @@ preprocessed_instances = preprocessor(file_ids)
 ```
 from negation_tagger import NegationTagger
     
-
-tagger = NegationTagger()
+# if gold standard is included, gold_included should be True, else False
+tagger = NegationTagger(gold_included)
 tagged_sentences = tagger(preprocessed_instances)
 ```
 

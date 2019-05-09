@@ -6,10 +6,11 @@ from negation_triggers import negation_triggers
 
 class NegationTagger(object):
 
-    def __init__(self):
+    def __init__(self, gold_included):
+
+        self.gold = gold_included
 
         self.negation_cues = negation_triggers['pre']
-        self.gold = False
 
         self.Concept_instance = namedtuple('Concept_instance',
                                            ('Sentence', 'Concept', 'Concept_span', 'Sentence_id', 'File_id')
