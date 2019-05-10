@@ -48,7 +48,7 @@ from negation_detector import NegationDetector, NegationDetectorEvaluation
 
 # usage for data WITHOUT gold standard negation annotations
 detector = NegationDetector()
-instances_detection_data = detector.detect(preprocessed_instances, model)
+instances_detection_data = detector.detect(tagged_sentences['sentence_instances'], model)
 # choose model from ['baseline', 'dependency', 'ensemble']
                                  
 
