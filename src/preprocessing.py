@@ -75,7 +75,7 @@ class PreprocessCorpus:
         text = data['text']
         path_to_text = '{}_text'.format(file_id)
         with open(path_to_text, 'w') as f:
-            json.dump(text, f)
+            f.write(text)
         frogged_text = subprocess.check_output(['frog', path_to_text])
         frogged_text = frogged_text.decode()
         frogged_text = self.convert_raw_frog_output(frogged_text)
