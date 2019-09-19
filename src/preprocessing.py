@@ -27,11 +27,11 @@ class PreprocessCorpus:
                                            ('Sentence', 'Concept', 'Modality', 'Concept_span', 'Sentence_id', 'File_id')
                                            )
 
-    def __call__(self, file_ids, outfile=''):
+    def __call__(self, file_ids, already_frogged=False, corpusfile=False, outfile=''):
 
         accumulated_concept_instances = []
         for file_id in file_ids:
-            accumulated_concept_instances += self.preprocess_file(file_id)
+            accumulated_concept_instances += self.preprocess_file(file_id, already_frogged=already_frogged, corpusfile=corpusfile)
 
         if outfile:
             print('Saving...')
